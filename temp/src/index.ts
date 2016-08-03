@@ -1,10 +1,12 @@
 /// <reference path="../typings/index.d.ts"/>
 
-import 'es6-shim';
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
-
 import {bootstrap} from '@angular/platform-browser-dynamic';
+import 'todomvc-app-css/index.css';
+import {provideStore, combineReducers} from '@ngrx/store';
+
+import {todos, visibility, initialTodo, initialVisibility} from './app/reducers/todos';
 
 import './index.scss';
 
@@ -18,5 +20,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 bootstrap(Root, [
-  provideRouter(routes)
+  provideRouter(routes),
+  provideStore(combineReducers({todos, visibility}), {todos: [initialTodo], visibility: initialVisibility})
 ]);
