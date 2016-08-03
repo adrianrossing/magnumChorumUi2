@@ -12,11 +12,14 @@ import {provideRouter} from '@angular/router';
 import {enableProdMode} from '@angular/core';
 import {routes, Root} from './routes';
 
+import {AuthService} from  './app/auth/auth.service';
+
 declare var process: any;
 if (process.env.NODE_ENV === 'production') {
   enableProdMode();
 }
 
 bootstrap(Root, [
-  provideRouter(routes)
+  provideRouter(routes),
+  AuthService
 ]);
