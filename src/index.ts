@@ -3,6 +3,7 @@
 import 'es6-shim';
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
+import 'auth0-lock';
 
 import {bootstrap} from '@angular/platform-browser-dynamic';
 
@@ -12,6 +13,8 @@ import {provideRouter} from '@angular/router';
 import {enableProdMode} from '@angular/core';
 import {routes, Root} from './routes';
 
+
+
 import {AuthService} from  './app/auth/auth.service';
 
 declare var process: any;
@@ -20,6 +23,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 bootstrap(Root, [
-  provideRouter(routes),
-  AuthService
+  provideRouter(routes)
 ]);

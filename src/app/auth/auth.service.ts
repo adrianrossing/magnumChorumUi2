@@ -1,6 +1,6 @@
 /* ===== app/auth.service.ts ===== */
 import { Injectable }      from '@angular/core';
-import {HTTP_PROVIDERS, Http} from 'angular2/http';
+// import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {tokenNotExpired, JwtHelper} from 'angular2-jwt/angular2-jwt';
 
 // avoid name not found warnings
